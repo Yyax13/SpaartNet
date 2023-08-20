@@ -19,9 +19,9 @@ You can use SpaartNet for:
 
 ## Update Logs:
 
-Now we have the first version of SpaartNet (SNFW v1.0.0):
+Now we have the 2nd version of SpaartNet (SNFW v1.0.1):
 
-1. With 100% original lib
-2. 4 tools
-3. Banner looks the Brazil's Flag
-4. Only one non-native lib used
+1. Now the DoS for sites work
+2. Add exit
+3. Add Yyax - Info on menu
+4. Now you can support me with BRL or ETH
