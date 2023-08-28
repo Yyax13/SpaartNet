@@ -1,4 +1,4 @@
-from libs.yyax import c, d, r, f, adress, DDOS
+from libs.yyax import *
 import os
 import time
 import random
@@ -22,6 +22,10 @@ def options():
     {c.cyan('[')}{c.yellow('2')}{c.cyan(']')} {c.cyan('UserRecon')}
     {c.cyan('[')}{c.yellow('3')}{c.cyan(']')} {c.cyan('Found Dirs')}
     {c.cyan('[')}{c.yellow('4')}{c.cyan(']')} {c.cyan('Adress by IP')}
+    {c.cyan('[')}{c.yellow('5')}{c.cyan(']')} {c.cyan('Emulate Server')}
+    {c.cyan('[')}{c.yellow('6')}{c.cyan(']')} {c.cyan('Check site status')}
+    {c.cyan('[')}{c.yellow('7')}{c.cyan(']')} {c.cyan('Encrypter & Decrypter')}
+    {tagn8} {c.cyan('Caesar')}
     {c.cyan('[')}{c.yellow('Y')}{c.cyan(']')} {c.cyan('Yyax - Info')}
     {c.cyan('[')}{c.yellow('X')}{c.cyan(']')} {c.cyan('Exit')}
     
@@ -41,7 +45,7 @@ def options():
 
             target_ip = input(f"    {hashtag} {c.cyan('Target IP: ')}")
             target_port = int(input(f"    {hashtag} {c.cyan('Target Port: ')}"))
-            packet_size = int(input(f"    {hashtag} {c.cyan('Packet size: ')}")) * 1000 * 1000
+            packet_size = int(input(f"    {hashtag} {c.cyan('Packet size: ')}"))
 
             d.attack(packet_size)
 
@@ -51,7 +55,7 @@ def options():
             slowloris_target_port = input(f"    {hashtag} {c.cyan('Target PORT: ')}")
             
             threads4ddos = int(input(f"    {hashtag} {c.cyan('Threads Number (start in 10): ')}"))
-            DDOS.start(target_ip=slowloris_target_ip, target_port=slowloris_target_port, num_threads=threads4ddos, packet_size_mb=2)
+            DDOS.start(target_ip=slowloris_target_ip, target_port=slowloris_target_port, num_threads=threads4ddos, packet_size_mb=1550000000)
 
     elif opt_choose == "2":
 
@@ -87,6 +91,108 @@ def options():
     {c.green(mapslink)}
 """)
     
+    elif opt_choose == "5":
+        server.start()
+
+    elif opt_choose == "6":
+        url2check = input(rf"    {hashtag} {c.cyan('Site url to check (with http/https): ')}")
+        checkstatus.verificar_estado_site(url=url2check)
+
+    elif opt_choose == "7":
+        copt_cd = input(fr"""
+    {tagn1} {c.cyan('Encrypt')}
+    {tagn2} {c.cyan('Decrypt')}
+    
+    {hashtag} {c.cyan('Choose an option: ')}""")
+        if copt_cd == "1":
+            text4crypt = input(fr"    {hashtag} {c.cyan('Text for encrypt: ')}")
+            copt = input(fr"""
+        {tagn1} {c.cyan('MD5')}
+        {tagn2} {c.cyan('Y4X Level 7 crypt')}
+        {tagn3} {c.cyan('SHA')}
+        {tagn4} {c.cyan('R7G Level 11 crypt')}
+        {tagn5} {c.cyan('FLK Level 21 crypt')}
+        {tagn6} {c.cyan('H1X Level 53 crypt')}
+        {tagn7} {c.cyan('Fucking 9517 crypt')}
+        {tagn8} {c.cyan("I don't know")}
+        {tagn9} {c.cyan('XTC Neg 3917')}
+
+        {hashtag_red} {c.cyan('Choose an option: ')}""")
+            
+            if copt == "1":
+                criptografado = crypter.criptografar_md5(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "2":
+                criptografado = crypter.criptografar_y4x(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "3":
+                criptografado = crypter.criptografar_sha(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "4":
+                criptografado = crypter.criptografar_r7g(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "5":
+                criptografado = crypter.criptografar_flk(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "6":
+                criptografado = crypter.criptografar_h1x(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "7":
+                criptografado = crypter.criptografar_fcking(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "8":
+                criptografado = crypter.criptografar_sla(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            elif copt == "9":
+                criptografado = crypter.criptografar_xtc(texto=text4crypt)
+                print(f"\n\n{criptografado}")
+            else:
+                print(f"{c.red('ERROR')}")
+
+        elif copt_cd == "2":
+            text4decrypt = input(fr"    {hashtag} {c.cyan('Text for decrypt: ')}")
+            coptd = input(fr"""
+        {tagn1} {c.cyan('MD5')}
+        {tagn2} {c.cyan('Y4X Level 7 crypt')}
+        {tagn3} {c.cyan('SHA')}
+        {tagn4} {c.cyan('R7G Level 11 crypt')}
+        {tagn5} {c.cyan('FLK Level 21 crypt')}
+        {tagn6} {c.cyan('H1X Level 53 crypt')}
+        {tagn7} {c.cyan('Fucking 9517 crypt')}
+        {tagn8} {c.cyan("I don't know")}
+
+        {hashtag_red} {c.cyan('Choose an option: ')}""")
+            
+            if coptd == "1":
+                decriptografado = decrypter.descriptografar_md5(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            elif coptd == "2":
+                decriptografado = decrypter.descriptografar_y4x(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            elif coptd == "3":
+                decriptografado = decrypter.descriptografar_sha(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            elif coptd == "4":
+                decriptografado = decrypter.descriptografar_r7g(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            elif coptd == "5":
+                decriptografado = decrypter.descriptografar_flk(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            elif coptd == "6":
+                decriptografado = decrypter.descriptografar_h1x(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            elif coptd == "7":
+                decriptografado = decrypter.descriptografar_fck(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            elif coptd == "8":
+                decriptografado = decrypter.descriptografar_sla(texto_criptografado=text4decrypt)
+                print(f"\n\n{criptografado}")
+            else:
+                print(f"{c.red('ERROR')}")
+
+    elif opt_choose == "8":
+        os.system('python libs/caesar.py')
+
     elif opt_choose in ['y', 'Y']:
         yyax_info = rf"""
     {c.purple('Area of ​​expertise: Information security, development of tools aimed at red team and front-end developer')}
