@@ -1,27 +1,54 @@
 # SpaartNet
-## Instalation
-```$ git clone https://github.com/Yyax13/SpaartNet ```
 
-```$ cd SpaartNet```
+[![Lang](https://img.shields.io/badge/linguagem-Python-blue.svg)](https://www.python.org/)
+[![Licença](https://img.shields.io/badge/licença-CC0-green.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+![Versão](https://img.shields.io/badge/versão-1.0.0-red.svg)
 
-```$ pip -r reqs.txt```
+>Simplesmente o MELHOR Framework
 
-```$ python main.py```
+## Instação
+`$ git clone https://github.com/Yyax13/SpaartNet `
 
-## Usage
+`$ cd SpaartNet`
 
-You can use SpaartNet for:
+`$ pip -r reqs.txt`
 
-1. Simulate DoS attacks (for wi-fi or sites)
-2. UserRecon (with username, for 30 social networks)
-3. Found Dirs on Sites (best than dirb)
-4. Take Adress with IP (needs IPStack Key)
+`$ python main.py`
+
+## Funcionalidades
+
+Você pode usar SpaartNet para/como:
+
+1. Simular ataques DoS (para wi-fi ou sites)
+2. UserRecon (com username, para 30 redes sociais)
+3. Found Dirs em Sites (melhor que dirb)
+4. Pegar endereço usando IP (precisa ter uma IPStack Key)
+5. Verificar status do site
+6. Criptografia Caesar e outros
+7. Força bruta em criptografia do tipo Caesar
+
+## Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para fazer um fork e enviar pull requests.
+
 
 ## Update Logs:
 
-Now we have the 2nd version of SpaartNet (SNFW v1.0.1):
+Agora temos a 3ª versão da SpaartNet (SNFW v1.0.3):
 
-1. Now the DoS for sites work
-2. Add exit
-3. Add Yyax - Info on menu
-4. Now you can support me with BRL or ETH
+1. 100% feito com bibliotecas originais
+2. 14 ferramentas inclusas
+3. O banner é estilizado no tema: Brasil
+4. Apenas uma lib não-nativa do python foi usada
+5. Agora temos algumas ferramentas portadas de outros repos meus
+
+## Contato
+
+Para perguntas ou sugestões, você pode me encontrar no Discord:
+> solo.yyax
+
+Ou no meu e-mail:
+> Yyax13@proton.me
+
+---
+© Lucas de Moraes "Yyax" Claro, 2023
