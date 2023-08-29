@@ -2,7 +2,7 @@
 
 [![Lang](https://img.shields.io/badge/linguagem-Python-blue.svg)](https://www.python.org/)
 [![Licença](https://img.shields.io/badge/licença-CC0-green.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
-![Versão](https://img.shields.io/badge/versão-1.0.0-red.svg)
+![Versão](https://img.shields.io/badge/versão-1.0.3-red.svg)
 
 >Simplesmente o MELHOR Framework
 
