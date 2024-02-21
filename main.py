@@ -43,11 +43,12 @@ def options():
         
         if opt2_choose2 == '1':
 
-            target_ip = input(f"    {hashtag} {c.cyan('Target IP: ')}")
-            target_port = int(input(f"    {hashtag} {c.cyan('Target Port: ')}"))
-            packet_size = int(input(f"    {hashtag} {c.cyan('Packet size: ')}"))
-
-            d.attack(packet_size)
+            tip = input(f"    {hashtag} {c.cyan('Target IP: ')}")
+            tport = int(input(f"    {hashtag} {c.cyan('Target Port: ')}"))
+            psize = int(input(f"    {hashtag} {c.cyan('Packet size: ')}"))
+         
+            d.__init__(d, target_ip=tip, target_port=tport)
+            d.attack(self=d, packet_size=psize)
 
         elif opt2_choose2 == '2':
 
@@ -72,7 +73,7 @@ def options():
     elif opt_choose == '4':
 
         ipt = input(rf"    {hashtag} {c.cyan('Target IP: ')}")
-        ukey = input(rf"    {hashtag} {c.cyan('IPStack Key: ')}")
+        ukey = "050592f6e8dda695c698231253fe5292"
         
         url = f"http://api.ipstack.com/{ipt}?access_key={ukey}"
         response = requests.get(url)
