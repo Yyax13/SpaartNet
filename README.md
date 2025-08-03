@@ -50,5 +50,3 @@ Para perguntas ou sugestões, você pode me encontrar no Discord:
 Ou no meu e-mail:
 > Yyax13@proton.me
 
----
-© Lucas de Moraes "Yyax" Claro, 2023
